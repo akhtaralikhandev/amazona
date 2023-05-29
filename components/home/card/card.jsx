@@ -13,11 +13,8 @@ const Card = () => {
   return (
     <div className="flex flex-wrap gap-8 items-center justify-center">
       {categories.map((x, index) => (
-        <Link href={"/category"}>
-          <div
-            key={index}
-            className="card shadow-2xl gap-2 flex w-72 flex-row items-center justify-center bg-fuchsia-50 p-2 rounded-lg"
-          >
+        <Link href={"/category"} key={index}>
+          <div className="card shadow-2xl gap-2 flex w-72 flex-row items-center justify-center bg-fuchsia-50 p-2 rounded-lg">
             <div className="card_wrapper flex flex-col gap-4">
               <span>{x?.title}</span>
               <Image
