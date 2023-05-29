@@ -50,7 +50,7 @@ const Navbar = () => {
             </span>
             <span>Deliver to Pakistan</span>
           </div>
-          <div className="navbarsearch    relative bg-white items-center flex">
+          <div className="navbarsearch    relative bg-white items-center hidden lg:flex xl:flex">
             <div className="dropdown text-xl text-black bg-gray-700">
               <span
                 onClick={() => toggleDisplay()}
@@ -168,7 +168,7 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-        <div className="inputdiv xl:hidden lg:hidden  bg-white text-black">
+        <div className="inputdiv hidden  bg-white text-black">
           <input type="text" className="p-1 border-none outline-none" />
           <span className="bg-yellow-600  p-1 text-white">
             <i className="fa fa-search" aria-hidden="true"></i>
