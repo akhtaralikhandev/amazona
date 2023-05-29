@@ -1,15 +1,15 @@
 import Image from "next/image";
 import "./category.css";
-const categories = [
-  { title: "computer and laptops", src: "/categories/computer/img1.png" },
-  { title: "Lady shoes", src: "/categories/female/shoes/img1.png" },
-  { title: "Men shoes", src: "/categories/male/shoes/img1.png" },
-  { title: "Lady clothes", src: "/categories/female/clothes/img2.png" },
-  { title: "Gents Clothes", src: "/categories/male/clothes/img1.jpg" },
-  { title: "books", src: "/categories/books/img1.png" },
-];
+// const categories = [
+//   { title: "computer and laptops", src: "/categories/computer/img1.png" },
+//   { title: "Lady shoes", src: "/categories/female/shoes/img1.png" },
+//   { title: "Men shoes", src: "/categories/male/shoes/img1.png" },
+//   { title: "Lady clothes", src: "/categories/female/clothes/img2.png" },
+//   { title: "Gents Clothes", src: "/categories/male/clothes/img1.jpg" },
+//   { title: "books", src: "/categories/books/img1.png" },
+// ];
 
-const Categories = () => {
+const Categories = ({ categories }) => {
   return (
     <div>
       <div className="divdivider flex items-center xl:p-4 lg:p-4 p-2 justify-center">
@@ -32,12 +32,18 @@ const Categories = () => {
               <span>{x?.title}</span>
               <Image
                 className="xl:h-72 lg:h-72 md:h-72  h-60"
-                src={x?.src}
+                src={x?.img}
                 height={250}
                 width={350}
                 alt="img"
               />
-              <span>see more</span>
+              <div className="flex items-center  gap-4">
+                <span>Price</span>
+                <span>{x?.price}</span>
+              </div>
+              <button className=" bg-yellow-600 text-white rounded-lg p-2">
+                view details
+              </button>
             </div>
           </div>
         ))}
