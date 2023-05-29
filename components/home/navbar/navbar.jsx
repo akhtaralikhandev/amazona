@@ -174,9 +174,11 @@ const Navbar = () => {
             <i className="fa fa-search" aria-hidden="true"></i>
           </span>
         </div>
-        <div className="inputdiv xl:hidden lg:hidden mr-2 ml-4 p-1 text-xl rounded-lg  bg-white text-black">
-          <i className="fa fa-user" aria-hidden="true"></i>{" "}
-        </div>
+        <Link href={"/login"}>
+          <div className="inputdiv xl:hidden lg:hidden mr-2 ml-4 p-1 text-xl rounded-lg  bg-white text-black">
+            <i className="fa fa-user" aria-hidden="true"></i>{" "}
+          </div>{" "}
+        </Link>
       </div>
     </div>
   );
