@@ -35,7 +35,7 @@ const Navbar = () => {
     <div>
       <div className="navbar_wrapper z-50 absolute w-full pl-4 p-2 pr-5 flex xl:flex-row lg:flex-row md:flex-row-reverse items-center   bg-gray-800 text-white xl:justify-between lg:justify-between  ">
         <div className="navbarLogo flex ml-8    cursor-pointer hover:text-gray-200 items-center ">
-          <span className="text-2xl cursor-pointer">amazon</span>
+          <span className="text-2xl cursor-pointer">Manal</span>
           <span>
             <i
               className="fa fa-arrow-circle-down text-yellow-500"

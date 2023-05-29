@@ -7,37 +7,37 @@ const sliders = [
   {
     id: 1,
     src: "/sliderimages/img1.jpg",
-    text: "Shop now with the best deal",
+    text: "Manalahasan - Your Ultimate Online Shopping Destination",
   },
   {
     id: 2,
     src: "/sliderimages/img2.jpg",
-    text: "Shop the latest fashion trends",
+    text: "Manalahasan - Embrace the Latest Fashion Trends",
   },
   {
     id: 3,
     src: "/sliderimages/img3.jpg",
-    text: "Get your hands on stylish accessories",
+    text: "Manalahasan - Elevate Your Style with Stylish Accessories",
   },
   {
     id: 4,
     src: "/sliderimages/img4.jpg",
-    text: "Discover the perfect gifts for any occasion",
+    text: "Manalahasan - Discover Perfect Gifts for Every Occasion",
   },
   {
     id: 5,
     src: "/sliderimages/img5.jpg",
-    text: "Upgrade your home decor with our collection",
+    text: "Manalahasan - Enhance Your Home Decor with our Collection",
   },
   {
     id: 6,
     src: "/sliderimages/img6.jpg",
-    text: "Stay active with our top fitness gear",
+    text: "Manalahasan - Stay Active with our Top Fitness Gear",
   },
   {
     id: 7,
     src: "/sliderimages/img7.jpg",
-    text: "Indulge in luxury beauty products",
+    text: "Manalahasan - Indulge in Luxury Beauty Products",
   },
 ];
 
