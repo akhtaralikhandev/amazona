@@ -145,10 +145,10 @@ const Navbar = () => {
                 Gents Clothes
               </li>
               <li className="p-2 cursor-pointer rounded-lg hover:bg-blue-500 hover:text-white">
-                Women's Clothing
+                Womens Clothing
               </li>
               <li className="p-2 cursor-pointer rounded-lg hover:bg-blue-500 hover:text-white">
-                Kids' Clothing
+                Kids Clothing
               </li>
               <li className="p-2 cursor-pointer rounded-lg hover:bg-blue-500 hover:text-white">
                 Shoes
