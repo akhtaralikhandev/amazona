@@ -1,0 +1,21 @@
+.navbarsearch {
+  position: relative;
+}
+.navbardropdownlist {
+  position: absolute;
+  right: 58%;
+}
+.havingaccount {
+  position: absolute;
+  top: 100%;
+  right: 15%;
+}
+.navbarLogo {
+  flex: 1;
+}
+.rightsideicon {
+  flex: 5;
+}
+.sidebarcomponentwrapper {
+  transition: 0.4s;
+}

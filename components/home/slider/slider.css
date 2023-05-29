@@ -1,0 +1,31 @@
+.slidertext {
+  position: absolute;
+  top: 20%;
+
+  left: 30%;
+  color: white;
+}
+.leftarrow {
+  position: absolute;
+  top: 45%;
+  left: 3%;
+  background-color: blue;
+
+  color: white;
+}
+.rightarrow {
+  position: absolute;
+  top: 45%;
+  right: 3%;
+  background-color: blue;
+
+  color: white;
+}
+.sliderwrapper > div {
+  display: flex;
+  /* Add transition properties */
+  transition: transform 0.5s ease-in-out;
+}
+/* .h-screen {
+  height: 110%;
+} */
