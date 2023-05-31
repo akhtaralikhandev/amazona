@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+
 const categories = [
   { title: "computer and laptops", src: "/categories/computer/img1.png" },
   { title: "Lady shoes", src: "/categories/female/shoes/img1.png" },
@@ -9,8 +10,10 @@ const categories = [
   { title: "Gents Clothes", src: "/categories/male/clothes/img1.jpg" },
   { title: "books", src: "/categories/books/img1.png" },
 ];
+
 const Item = () => {
   const [number, setNumber] = useState(1);
+
   const increment = () => {
     if (number === 5) {
       setNumber(5);
@@ -18,6 +21,7 @@ const Item = () => {
       setNumber(number + 1);
     }
   };
+
   const decrement = () => {
     if (number === 1) {
       setNumber(1);
@@ -25,6 +29,7 @@ const Item = () => {
       setNumber(number - 1);
     }
   };
+
   return (
     <div>
       <div className="div">
@@ -46,15 +51,15 @@ const Item = () => {
             </div>
             <div className="rightside flex-1 items-center xl:items-start flex flex-col gap-4">
               <span className="xl:text-3xl lg:text-2xl text-xl text-blue-700">
-                MacBook Pro with M1 chip (13-inch)
+                MacBook Pro with M1 chip 13-inch
               </span>
               <span>
-                The MacBook Pro with M1 chip (13-inch) offers powerful
-                performance with an 8-core CPU and advanced graphics. It
-                features a stunning Retina display with True Tone technology, a
-                comfortable Magic Keyboard with Touch Bar, and Thunderbolt/USB 4
-                ports. With efficient thermal management, extended battery life,
-                and seamless integration into the Apple ecosystem, it's a sleek
+                The MacBook Pro with M1 chip 13-inch offers powerful performance
+                with an 8-core CPU and advanced graphics. It features a stunning
+                Retina display with True Tone technology, a comfortable Magic
+                Keyboard with Touch Bar, and Thunderbolt/USB 4 ports. With
+                efficient thermal management, extended battery life, and
+                seamless integration into the Apple ecosystem, it&apos;s a sleek
                 and portable powerhouse for professionals and creatives.
               </span>
               <div className="flex gap-4 items-center">
@@ -122,7 +127,7 @@ const Item = () => {
                 <span>Price</span>
                 <span>{x?.price}</span>
               </div>
-              <Link href={`/category/1`}>
+              <Link href={"/category/1"}>
                 <button className=" bg-yellow-600 text-white rounded-lg p-2">
                   view details
                 </button>{" "}
@@ -134,4 +139,5 @@ const Item = () => {
     </div>
   );
 };
+
 export default Item;
