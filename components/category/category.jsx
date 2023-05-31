@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import "./category.css";
 // const categories = [
 //   { title: "computer and laptops", src: "/categories/computer/img1.png" },
@@ -41,9 +42,11 @@ const Categories = ({ categories }) => {
                 <span>Price</span>
                 <span>{x?.price}</span>
               </div>
-              <button className=" bg-yellow-600 text-white rounded-lg p-2">
-                view details
-              </button>
+              <Link href={`/category/1`}>
+                <button className=" bg-yellow-600 text-white rounded-lg p-2">
+                  view details
+                </button>{" "}
+              </Link>
             </div>
           </div>
         ))}
