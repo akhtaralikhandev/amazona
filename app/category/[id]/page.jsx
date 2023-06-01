@@ -15,6 +15,7 @@ const ItemPageComponent = () => {
     <div>
       <Navbar />
       <Item />
+      
     </div>
   );
 };

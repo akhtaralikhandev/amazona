@@ -97,9 +97,11 @@ const Item = () => {
                 <button className=" bg-yellow-600 hover:bg-yellow-500  text-white rounded-lg p-2">
                   Add to Cart
                 </button>
-                <button className=" bg-green-600 hover:bg-green-500  text-white rounded-lg p-2">
-                  Buy Now
-                </button>
+                <Link href={"/payment"}>
+                  <button className=" bg-green-600 hover:bg-green-500  text-white rounded-lg p-2">
+                    Buy Now
+                  </button>{" "}
+                </Link>
               </div>
             </div>
           </div>
