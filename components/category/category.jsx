@@ -27,7 +27,7 @@ const Categories = ({ categories }) => {
         {categories.map((x, index) => (
           <div
             key={index}
-            className="card shadow-2xl gap-2 flex w-72 flex-row items-center justify-center bg-fuchsia-50 p-2 rounded-lg"
+            className="card2 shadow-2xl gap-2 flex w-72 flex-row items-center justify-center bg-fuchsia-50 p-2 rounded-lg"
           >
             <div className="card_wrapper flex flex-col gap-4">
               <span>{x?.title}</span>
