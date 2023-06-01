@@ -175,7 +175,7 @@ const Navbar = () => {
           </span>
         </div>
         <Link href={"/login"}>
-          <div className="inputdiv xl:hidden lg:hidden mr-2 ml-4 p-1 text-xl rounded-lg  bg-white text-black">
+          <div className="inputdiv xl:hidden lg:hidden  h-8 w-8 flex items-center justify-center p-1 text-xl rounded-full bg-white text-black">
             <i className="fa fa-user" aria-hidden="true"></i>{" "}
           </div>{" "}
         </Link>

@@ -53,7 +53,7 @@ const Item = () => {
               <span className="xl:text-3xl lg:text-2xl text-xl text-blue-700">
                 MacBook Pro with M1 chip 13-inch
               </span>
-              <span>
+              <span className="description">
                 The MacBook Pro with M1 chip 13-inch offers powerful performance
                 with an 8-core CPU and advanced graphics. It features a stunning
                 Retina display with True Tone technology, a comfortable Magic
