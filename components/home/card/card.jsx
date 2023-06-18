@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { useSession } from "next-auth/react";
+
 import "./card.css";
 import Link from "next/link";
 const categories = [

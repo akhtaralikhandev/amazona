@@ -31,6 +31,4 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
   },
 });
-
-// Create a model using the schema
 export const User = mongoose.models.User || mongoose.model("User", userSchema);

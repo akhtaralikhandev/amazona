@@ -43,7 +43,7 @@ const Categories = ({ categories }) => {
                 <span>{x?.price}</span>
               </div>
               <Link href={`/category/1`}>
-                <button className=" bg-yellow-600 text-white rounded-lg p-2">
+                <button className="hover:bg-yellow-500 bg-yellow-600 text-white rounded-lg p-2">
                   view details
                 </button>{" "}
               </Link>

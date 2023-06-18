@@ -1,5 +1,4 @@
-import LoginComponent from "../../components/login/login";
-
+import LoginComponent from "../../../components/auth/login_btn";
 const LoginPage = () => {
   return (
     <div>

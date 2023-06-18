@@ -3,12 +3,24 @@ import Link from "next/link";
 import { useState } from "react";
 
 const categories = [
-  { title: "computer and laptops", src: "/categories/computer/img1.png" },
-  { title: "Lady shoes", src: "/categories/female/shoes/img1.png" },
-  { title: "Men shoes", src: "/categories/male/shoes/img1.png" },
-  { title: "Lady clothes", src: "/categories/female/clothes/img2.png" },
-  { title: "Gents Clothes", src: "/categories/male/clothes/img1.jpg" },
-  { title: "books", src: "/categories/books/img1.png" },
+  {
+    title: "computer and laptops",
+    src: "/categories/computer/img1.png",
+    price: 1000,
+  },
+  { title: "Lady shoes", src: "/categories/female/shoes/img1.png", price: 50 },
+  { title: "Men shoes", src: "/categories/male/shoes/img1.png", price: 60 },
+  {
+    title: "Lady clothes",
+    src: "/categories/female/clothes/img2.png",
+    price: 80,
+  },
+  {
+    title: "Gents Clothes",
+    src: "/categories/male/clothes/img1.jpg",
+    price: 90,
+  },
+  { title: "books", src: "/categories/books/img1.png", price: 20 },
 ];
 
 const Item = () => {
@@ -78,6 +90,10 @@ const Item = () => {
                   Large
                 </label>
               </div>
+              <div className="price flex gap-4 items-center">
+                <span>Price</span>
+                <span>$340</span>
+              </div>
               <div className="quantity flex items-center  xl:gap-12 lg:gap-8 gap-4">
                 <button
                   onClick={() => increment()}
@@ -114,7 +130,7 @@ const Item = () => {
         {categories.map((x, index) => (
           <div
             key={index}
-            className="card shadow-2xl gap-2 flex w-72 flex-row items-center justify-center bg-fuchsia-50 p-2 rounded-lg"
+            className="card2 shadow-2xl gap-2 flex w-72 flex-row items-center justify-center bg-fuchsia-50 p-2 rounded-lg"
           >
             <div className="card_wrapper flex flex-col gap-4">
               <span>{x?.title}</span>
@@ -127,10 +143,10 @@ const Item = () => {
               />
               <div className="flex items-center  gap-4">
                 <span>Price</span>
-                <span>{x?.price}</span>
+                <span>${x?.price}</span>
               </div>
               <Link href={"/category/1"}>
-                <button className=" bg-yellow-600 text-white rounded-lg p-2">
+                <button className=" bg-yellow-600 hover:bg-yellow-500 text-white rounded-lg p-2">
                   view details
                 </button>{" "}
               </Link>

@@ -1,9 +1,13 @@
 "use client";
 import { useState } from "react";
+import { useSession } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
 import Link from "next/link";
 import "./navbar.css";
 const Navbar = () => {
   // used for search all div
+  const { data: session } = useSession();
+  console.log(session);
   const [display, setDisplay] = useState("none");
   const [displayLogin, setDisplayLogin] = useState("none");
   const [selectedOption, setSelectedOption] = useState("all");
@@ -97,7 +101,7 @@ const Navbar = () => {
               className="div havingaccount absolute rounded-lg  bg-gray-200 text-black p-2 w-48 flex flex-col items-center  gap-2"
             >
               <span>having account?</span>
-              <Link href={"/login"}>
+              <Link href={"/auth/login"}>
                 <span className="bg-white text-black hover:text-white p-2 rounded-lg hover:bg-blue-600 cursor-pointer">
                   login here
                 </span>
@@ -115,13 +119,15 @@ const Navbar = () => {
               Returns & <span>Orders</span>
             </span>
           </div>
-          <div className="cart flex items-center relative cursor-pointer hover:text-gray-200">
-            <span className="absolute -top-3 left-2">0</span>
-            <span className="text-3xl">
-              <i className="fa fa-cart-arrow-down" aria-hidden="true"></i>
-            </span>
-            <span>Cart</span>
-          </div>
+          <Link href={"/cart"}>
+            <div className="cart flex items-center relative cursor-pointer hover:text-gray-200">
+              <span className="absolute -top-3 left-2">0</span>
+              <span className="text-3xl">
+                <i className="fa fa-cart-arrow-down" aria-hidden="true"></i>
+              </span>
+              <span>Cart</span>
+            </div>{" "}
+          </Link>
         </div>
         {sidebarOverlay && (
           <div
@@ -141,8 +147,11 @@ const Navbar = () => {
         >
           <div className="sidebarcomponentwrapper z-10 mt-8">
             <ul className="text-xl items-start overscroll-y-auto  pl-8 flex flex-col gap-2">
-              <li className="p-2 cursor-pointer rounded-lg hover:bg-blue-500 hover:text-white">
-                Gents Clothes
+              <li
+                onClick={() => signOut()}
+                className="p-2 cursor-pointer rounded-lg hover:bg-blue-500 hover:text-white"
+              >
+                sign out
               </li>
               <li className="p-2 cursor-pointer rounded-lg hover:bg-blue-500 hover:text-white">
                 Womens Clothing
