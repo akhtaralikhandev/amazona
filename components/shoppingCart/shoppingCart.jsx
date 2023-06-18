@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Navbar from "../home/navbar/navbar";
 import { useSession, getSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import LoginComponent from "../login/login";
 const categories = [
   {
     title: "computer and laptops",
@@ -27,7 +27,6 @@ const categories = [
 const ShoppingCart = () => {
   const [number, setNumber] = useState(1);
   const { data: session, status } = useSession();
-  const router = useRouter();
   const increment = () => {
     if (number === 5) {
       setNumber(5);
@@ -52,7 +51,7 @@ const ShoppingCart = () => {
     // Add your checkout logic here
   };
   if (!session) {
-    router.push("/auth/login");
+    return <LoginComponent />;
   }
   return (
     <div className="shoppingCart">
