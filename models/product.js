@@ -13,10 +13,19 @@ const productSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  img: {
+    type: String,
+    required: true,
+  },
   description: {
     type: String,
   },
-  availibilty: Boolean,
+  availability: Boolean,
+  category: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "category",
+    required: true,
+  },
 });
 
 // Create a model using the schema
