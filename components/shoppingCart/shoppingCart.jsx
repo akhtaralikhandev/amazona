@@ -121,8 +121,11 @@ const ShoppingCart = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {cartItems?.map((x) => (
-                    <tr className="flex items-center justify-between w-full">
+                  {cartItems?.map((x, index) => (
+                    <tr
+                      key={index}
+                      className="flex items-center justify-between w-full"
+                    >
                       <td className="flex items-center justify-center flex-1">
                         <div className="">
                           <div className="">
