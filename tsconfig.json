@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/error.js", "app/error.js", "app/about/page.js", "app/register/page.js", "app/login/page.js", "middlewares/authMiddleware.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/error.js", "app/error.js", "app/about/page.js", "app/register/page.js", "app/login/page.js", "middlewares/authMiddleware.js", "components/category/context.js"],
   "exclude": ["node_modules"]
 }

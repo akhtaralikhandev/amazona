@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-
 const categorySchema = new mongoose.Schema({
   title: {
     type: String,
@@ -10,7 +9,6 @@ const categorySchema = new mongoose.Schema({
     required: true,
   },
 });
-
 // Create a model using the schema
 export const Category =
-  mongoose.models.Category || mongoose.model("category", categorySchema);
+  mongoose.models.Category || mongoose.model("Category", categorySchema);

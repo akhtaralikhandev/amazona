@@ -1,57 +1,71 @@
 import Image from "next/image";
 import Link from "next/link";
 import "./category.css";
-// const categories = [
-//   { title: "computer and laptops", src: "/categories/computer/img1.png" },
-//   { title: "Lady shoes", src: "/categories/female/shoes/img1.png" },
-//   { title: "Men shoes", src: "/categories/male/shoes/img1.png" },
-//   { title: "Lady clothes", src: "/categories/female/clothes/img2.png" },
-//   { title: "Gents Clothes", src: "/categories/male/clothes/img1.jpg" },
-//   { title: "books", src: "/categories/books/img1.png" },
-// ];
+import { useContext } from "react";
+import { Category_context } from "./context";
+import { ThreeDots } from "react-loader-spinner";
 
 const Categories = ({ categories }) => {
-  return (
-    <div>
-      <div className="divdivider flex items-center xl:p-4 lg:p-4 p-2 justify-center">
-        <span className="xl: lg:text-3xl md:text-2xl text-xl text-slate-800  italic">
-          Welcome Akhtar Ali khan
-        </span>
-      </div>
-      <div className="divdivider flex items-center xl:p-14 lg:p-14 p-6 justify-center">
-        <span className="xl: lg:text-5xl md:text-3xl text-xl text-slate-800 font-bold ">
-          Elevate Your Tech Experience.
-        </span>
-      </div>
-      <div className="flex flex-wrap gap-8 items-center justify-center">
-        {categories.map((x, index) => (
-          <div
-            key={index}
-            className="card2 shadow-2xl gap-2 flex w-72 flex-row items-center justify-center bg-fuchsia-50 p-2 rounded-lg"
-          >
-            <div className="card_wrapper flex flex-col gap-4">
-              <span>{x?.title}</span>
-              <Image
-                className="xl:h-72 lg:h-72 md:h-72  h-60"
-                src={x?.img}
-                height={250}
-                width={350}
-                alt="img"
-              />
-              <div className="flex items-center  gap-4">
-                <span>Price</span>
-                <span>{x?.price}</span>
+  const { categoryId, setCategory_id } = useContext(Category_context);
+  console.log("this is category id");
+  console.log(categoryId);
+  if (categories) {
+    return (
+      <div>
+        <div className="divdivider flex items-center xl:p-4 lg:p-4 p-2 justify-center">
+          <span className="xl: lg:text-3xl md:text-2xl text-xl text-slate-800  italic">
+            Welcome Akhtar Ali khan
+          </span>
+        </div>
+        <div className="divdivider flex items-center xl:p-14 lg:p-14 p-6 justify-center">
+          <span className="xl: lg:text-5xl md:text-3xl text-xl text-slate-800 font-bold ">
+            Elevate Your Tech Experience.
+          </span>
+        </div>
+        <div className="flex flex-wrap gap-8 items-center justify-center">
+          {categories?.map((x, index) => (
+            <div
+              key={index}
+              className="card2 shadow-2xl gap-2 flex w-72 flex-row items-center justify-center bg-fuchsia-50 p-2 rounded-lg"
+            >
+              <div className="card_wrapper flex flex-col gap-4">
+                <span>{x?.title}</span>
+                <Image
+                  className="xl:h-72 lg:h-72 md:h-72  h-60"
+                  src={x?.img}
+                  height={250}
+                  width={350}
+                  alt="img"
+                />
+                <div className="flex items-center  gap-4">
+                  <span>Price</span>
+                  <span>${x?.price}</span>
+                </div>
+                <Link href={`/item/itemId=${x?._id}`}>
+                  <button className="hover:bg-yellow-500 bg-yellow-600 text-white rounded-lg p-2">
+                    view details
+                  </button>{" "}
+                </Link>
               </div>
-              <Link href={`/category/1`}>
-                <button className="hover:bg-yellow-500 bg-yellow-600 text-white rounded-lg p-2">
-                  view details
-                </button>{" "}
-              </Link>
             </div>
-          </div>
-        ))}
-      </div>{" "}
-    </div>
-  );
+          ))}
+        </div>{" "}
+      </div>
+    );
+  } else {
+    return (
+      <div className="w-full h-screen flex items-center justify-center">
+        <ThreeDots
+          height="80"
+          width="80"
+          radius="9"
+          color="blue"
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          visible={true}
+        />
+      </div>
+    );
+  }
 };
 export default Categories;

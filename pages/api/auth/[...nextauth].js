@@ -52,6 +52,7 @@ export const authOptions = {
           ...token,
           username: user.username,
           profilePic: user.profilePic,
+          _id: user._id,
         };
       }
       return token;

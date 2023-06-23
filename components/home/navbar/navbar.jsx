@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useSession } from "next-auth/react";
 import { signIn, signOut } from "next-auth/react";
+import { CartTotalItemContext } from "@/components/shoppingCart/CartProvider";
 import Link from "next/link";
 import "./navbar.css";
 const Navbar = () => {
@@ -13,7 +14,8 @@ const Navbar = () => {
   const [selectedOption, setSelectedOption] = useState("all");
   const [displaySidebar, setDisplaySidebar] = useState("none");
   const [sidebarOverlay, setSidebarOverlay] = useState(false); // Added state for sidebar overlay
-
+  const { totalCartItems, setTotalCartItems } =
+    useContext(CartTotalItemContext);
   const toggleDisplay = () => {
     if (display === "none") {
       setDisplay("flex");
@@ -39,7 +41,7 @@ const Navbar = () => {
     <div>
       <div className="navbar_wrapper z-50 absolute w-full pl-4 p-2 pr-5 flex xl:flex-row lg:flex-row md:flex-row-reverse items-center   bg-gray-800 text-white xl:justify-between lg:justify-between  ">
         <div className="navbarLogo flex ml-8    cursor-pointer hover:text-gray-200 items-center ">
-          <span className="text-2xl cursor-pointer">Manal</span>
+          <span className="text-2xl cursor-pointer">Amazona</span>
           <span>
             <i
               className="fa fa-arrow-circle-down text-yellow-500"
@@ -121,7 +123,9 @@ const Navbar = () => {
           </div>
           <Link href={"/cart"}>
             <div className="cart flex items-center relative cursor-pointer hover:text-gray-200">
-              <span className="absolute -top-3 left-2">0</span>
+              <span className="absolute -top-3 left-2">
+                {totalCartItems ? totalCartItems : ""}
+              </span>
               <span className="text-3xl">
                 <i className="fa fa-cart-arrow-down" aria-hidden="true"></i>
               </span>

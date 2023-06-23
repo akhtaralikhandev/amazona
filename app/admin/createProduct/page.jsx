@@ -1,4 +1,4 @@
-import CreateProductComp from "../../components/product/create";
+import CreateProductComp from "../../../components/admin/product/create";
 const CreateProductPage = () => {
   return (
     <div>
