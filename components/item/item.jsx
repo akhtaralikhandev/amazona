@@ -3,9 +3,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { useSession } from "next-auth/react";
 import { ThreeDots } from "react-loader-spinner";
-
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import PopupAlert from "../alert/alert";
 const categories = [
   {
     title: "computer and laptops",
@@ -31,6 +31,7 @@ const Item = ({ item }) => {
   const [number, setNumber] = useState(1);
   const { data: session } = useSession();
   const [loading, setLoading] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
   const router = useRouter();
   const _id = session?.user?._id;
   console.log(_id);
@@ -41,7 +42,9 @@ const Item = ({ item }) => {
       setNumber(number + 1);
     }
   };
-
+  const handleAlertClose = () => {
+    setShowAlert(false);
+  };
   const decrement = () => {
     if (number === 1) {
       setNumber(1);
@@ -52,18 +55,22 @@ const Item = ({ item }) => {
 
   const handleSubmit = async (e, product) => {
     e.preventDefault();
-    try {
-      setLoading(true);
-      const resp = await axios.post(`/api/cart/cart`, {
-        user: _id,
-        product: product,
-      });
-      router.push("/cart");
-      console.log(resp.data);
-    } catch (error) {
-      console.error("Error fetching categories:", error);
-    } finally {
-      setLoading(false);
+    if (!session) {
+      setShowAlert(true);
+    } else {
+      try {
+        setLoading(true);
+        const resp = await axios.post(`/api/cart/cart`, {
+          user: _id,
+          product: product,
+        });
+        router.push("/cart");
+        console.log(resp.data);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -83,6 +90,12 @@ const Item = ({ item }) => {
         </div>
       ) : (
         <div>
+          {showAlert && (
+            <PopupAlert
+              onClose={handleAlertClose}
+              message={"plz login first"}
+            />
+          )}
           <div className="div">
             <div className="wrapper flex flex-col items-start gap-4  pt-24  xl:pl-14 p-4">
               <div className="top">
