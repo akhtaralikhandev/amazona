@@ -2,42 +2,41 @@
 import { useState, useEffect } from "react";
 import "./slider.css";
 import Image from "next/image";
-
 const sliders = [
   {
     id: 1,
     src: "/sliderimages/img1.jpg",
-    text: "Manalahasan - Your Ultimate Online Shopping Destination",
+    text: "Your Ultimate Online Shopping Destination",
   },
   {
     id: 2,
     src: "/sliderimages/img2.jpg",
-    text: "Manalahasan - Embrace the Latest Fashion Trends",
+    text: "Embrace the Latest Fashion Trends",
   },
   {
     id: 3,
     src: "/sliderimages/img3.jpg",
-    text: "Manalahasan - Elevate Your Style with Stylish Accessories",
+    text: "Elevate Your Style with Stylish Accessories",
   },
   {
     id: 4,
     src: "/sliderimages/img4.jpg",
-    text: "Manalahasan - Discover Perfect Gifts for Every Occasion",
+    text: "Discover Perfect Gifts for Every Occasion",
   },
   {
     id: 5,
     src: "/sliderimages/img5.jpg",
-    text: "Manalahasan - Enhance Your Home Decor with our Collection",
+    text: "Enhance Your Home Decor with our Collection",
   },
   {
     id: 6,
     src: "/sliderimages/img6.jpg",
-    text: "Manalahasan - Stay Active with our Top Fitness Gear",
+    text: "Stay Active with our Top Fitness Gear",
   },
   {
     id: 7,
     src: "/sliderimages/img7.jpg",
-    text: "Manalahasan - Indulge in Luxury Beauty Products",
+    text: "Indulge in Luxury Beauty Products",
   },
 ];
 

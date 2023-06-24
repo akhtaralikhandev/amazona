@@ -13,13 +13,13 @@ const Categories = ({ categories }) => {
     return (
       <div>
         <div className="divdivider flex items-center xl:p-4 lg:p-4 p-2 justify-center">
-          <span className="xl: lg:text-3xl md:text-2xl text-xl text-slate-800  italic">
-            Welcome Akhtar Ali khan
+          <span className="xl: lg:text-3xl md:text-2xl text-xl text-slate-800 italic">
+            Explore our wide range of products, Akhtar Ali Khan!
           </span>
         </div>
         <div className="divdivider flex items-center xl:p-14 lg:p-14 p-6 justify-center">
           <span className="xl: lg:text-5xl md:text-3xl text-xl text-slate-800 font-bold ">
-            Elevate Your Tech Experience.
+            {/* Elevate Your Tech Experience. */}
           </span>
         </div>
         <div className="flex flex-wrap gap-8 items-center justify-center">

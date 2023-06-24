@@ -1,6 +1,7 @@
 "use client";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useSession } from "next-auth/react";
+import axios from "axios";
 import { signIn, signOut } from "next-auth/react";
 import { CartTotalItemContext } from "@/components/shoppingCart/CartProvider";
 import Link from "next/link";
@@ -13,6 +14,10 @@ const Navbar = () => {
   const [displayLogin, setDisplayLogin] = useState("none");
   const [selectedOption, setSelectedOption] = useState("all");
   const [displaySidebar, setDisplaySidebar] = useState("none");
+  const [categories, setCategories] = useState();
+  const [loading, setLoading] = useState(false);
+  const [category_id, setCategoryId] = useState("");
+
   const [sidebarOverlay, setSidebarOverlay] = useState(false); // Added state for sidebar overlay
   const { totalCartItems, setTotalCartItems } =
     useContext(CartTotalItemContext);
@@ -36,6 +41,23 @@ const Navbar = () => {
       setSidebarOverlay(false);
     }
   };
+  // fetch categories
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        setLoading(true);
+        const resp = await axios.get("/api/category/category");
+        setCategories(resp.data);
+        console.log(resp.data);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCategories();
+  }, []);
   const options = ["option 1", "option 2", "option 3", "option 4"];
   return (
     <div>
@@ -157,21 +179,21 @@ const Navbar = () => {
               >
                 sign out
               </li>
-              <li className="p-2 cursor-pointer rounded-lg hover:bg-blue-500 hover:text-white">
-                Womens Clothing
-              </li>
-              <li className="p-2 cursor-pointer rounded-lg hover:bg-blue-500 hover:text-white">
-                Kids Clothing
-              </li>
-              <li className="p-2 cursor-pointer rounded-lg hover:bg-blue-500 hover:text-white">
-                Shoes
-              </li>
-              <li className="p-2 cursor-pointer rounded-lg hover:bg-blue-500 hover:text-white">
-                Bags and Accessories
-              </li>
-              <li className="p-2 cursor-pointer rounded-lg hover:bg-blue-500 hover:text-white">
-                Electronics
-              </li>
+              {categories?.map((x, index) => (
+                <Link
+                  onClick={() => {
+                    setCategoryId(x?._id);
+                    console.log(x?._id);
+                  }}
+                  href={`/category/categoryId=${x?._id}`}
+                  key={index}
+                >
+                  <li className="p-2 cursor-pointer rounded-lg hover:bg-blue-500 hover:text-white">
+                    {x?.title}
+                  </li>
+                </Link>
+              ))}
+
               <li
                 onClick={() => toggleSidebar()}
                 className="absolute cursor-pointer right-12 top-2 text-4xl text-red-500"
